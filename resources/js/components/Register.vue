@@ -50,9 +50,7 @@
         methods:{
             onSubmit(){
                 this.errors = [];
-                if(!this.name){
-                    this.errors.push('İsim gereklidir.');
-                }
+
                 if(!this.username){
                     this.errors.push('Kullanıcı adı gereklidir.');
                 }

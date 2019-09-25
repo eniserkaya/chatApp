@@ -4,17 +4,16 @@
         <spinner v-if="loading"></spinner>
         <div v-else-if="initiated">
             <router-view :app="this"/>
-
         </div>
     </div>
 </template>
 
 <script>
     import Navbar from "./Navbar";
-
+    import Home from "./Home";
     export default {
         name: "app",
-        components: {Navbar},
+        components: {Navbar,Home},
         data() {
             return {
                 user: null,

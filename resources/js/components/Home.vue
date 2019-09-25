@@ -3,16 +3,11 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
-                    <div class="card-header">*t</div>
+                    <div class="card-header" v-if="this.user">{{this.user.name}} Hoşgeldin.</div>
 
                     <div class="card-body">
-                        {{this.app.user}}
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+                        Chat ekranı tasarlanacak
                         <br/>
                     </div>
                 </div>            </div>
@@ -22,8 +17,15 @@
 
 <script>
     export default {
+        props: ['app'],
         mounted() {
+
             console.log('Component mounted.')
+        },
+        data () {
+            return {
+                user:this.app.user
+            }
         }
     };
 </script>

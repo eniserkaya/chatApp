@@ -1,5 +1,6 @@
 import Home from './components/Home';
 import Register from './components/Register';
+import Login from'./components/Login'
 
 export default [
     {
@@ -11,5 +12,10 @@ export default [
         path: '/register',
         component: Register,
         name: 'Register'
+    },
+    {
+        path: '/login',
+        component: Login,
+        name: 'Login'
     }
 ]
