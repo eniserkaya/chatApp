@@ -12,6 +12,35 @@
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
         <title>Chat Apps</title>
+        <style>
+            .under {
+                position: absolute;
+                bottom: 200px;
+                right: 200px;
+            }
+            #container {
+                position: fixed;
+                bottom: 0;
+                right: 0;
+                pointer-events: none;
+            }
+            .chat {
+                border: 1px solid #999;
+                display: inline-block;
+                vertical-align: bottom;
+                position: relative;
+                margin: 0 5px;
+                pointer-events: auto;
+            }
+            .title {
+                padding: 0.5em;
+                background-color: blue;
+                color: white;
+            }
+            .text {
+                padding: 10px;
+            }
+        </style>
 
     </head>
     <body>

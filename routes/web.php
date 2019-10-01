@@ -12,6 +12,8 @@
 */
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
+
 
 Route::get('/', function () {
     return view('welcome');
@@ -23,6 +25,16 @@ Route::prefix('auth')->group(function (){
     Route::post('login','AppController@login');
     Route::post('register','AppController@register');
     Route::post('logout','AppController@logout');
-    Route::post('login','AppController@login');
-    Route::post('login','AppController@login');
 });
+
+Route::get('add-notification', function() {
+    broadcast(new \App\Events\ShowDialogEvent);
+    return 'Bildirim Gönderildi.';
+});
+
+Route::group(['middleware' => ['AuthCheck']],function(){
+    Route::post('/sendMessage','AppController@addMessage');
+    Route::get('/getMessageList','AppController@getMessageList');
+
+});
+

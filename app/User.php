@@ -19,6 +19,12 @@ class User extends Authenticatable
         'name', 'email', 'password',
     ];
 
+    // A user can send a message
+    public function sent()
+    {
+        return $this->hasMany(Message::class,'sender_id');
+    }
+
     /**
      * The attributes that should be hidden for arrays.
      *

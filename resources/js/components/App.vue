@@ -27,6 +27,10 @@
         },
         mounted(){
             this.init();
+            window.Echo.channel('notification')
+                .listen('ShowDialogEvent', (e) => {
+                    console.log(e);
+                });
         },
         methods: {
             init() {
